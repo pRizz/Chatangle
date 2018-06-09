@@ -1,0 +1,48 @@
+Privacy Notice
+This privacy notice discloses the privacy practices for www.chatangle.com. This privacy notice applies solely to information collected by this website. It will notify you of the following:
+- What personally identifiable information is collected from you through the website, how it is used and with whom it may be shared.
+- What choices are available to you regarding the use of your data.
+- The security procedures in place to protect the misuse of your information.
+- How you can correct any inaccuracies in the information.
+
+Information Collection, Use, and Sharing
+We are the sole owners of the information collected on this site. We only have access to/collect information that you voluntarily give us via email or other direct contact from you. We will not sell or rent this information to anyone. Any content (text or otherwise) you submit on this website will be permanently and publicly stored in the IOTA tangle. You cannot remove this data, barring a snapshot of the tangle. Even then, third parties may make backups of old tangle snapshots with your data. Therefore, it is imperative that you only submit data that you are comfortable sharing publicly.
+
+We will not share your information with any third party outside of our organization.
+
+Your Access to and Control Over Information
+You may opt out of any future contacts from us at any time. You can do the following at any time by contacting us (via support@prizzventuresllc.com):
+- See what data we have about you, if any.
+- Change/correct any data we have about you.
+- Have us delete any data we have about you.
+- Express any concern you have about our use of your data.
+
+Anonymous Information Collection
+We reserve the right to collect and log anonymous information through the usage of this website. Anonymous information includes, but is not limited to, your browser client, the region from which you access this website, or any IP address that is used to access this website. Anonymous information is used to improve the quality of service of this website and to fix any issues arising through the anonymous usage of this website. You may not limit the collection or logging of anonymous information.
+
+Security
+We take precautions to protect your information. When you submit sensitive information via the website, your information is protected both online and offline, not including content you submit publicly to the IOTA tangle.
+
+Wherever we collect sensitive information (such as credit card data), that information is encrypted and transmitted to us in a secure way. You can verify this by looking for a lock icon in the address bar and looking for "https" at the beginning of the address of the Web page.
+
+While we use encryption to protect sensitive information transmitted online, we also protect your information offline. The computers/servers in which we store personally identifiable information are kept in a secure environment.
+
+Amazon Web Services
+This website uses AWS (Amazon Web Services) for hosting, metrics, and other features. AWS may collect and log IP addresses, request headers, and/or other data. AWS may store cookies on your computer to facilitate load balancing services. See AWS's Privacy Policy for more information.
+
+Google Analytics
+This website uses GA (Google Analytics) for metrics purposes and other features. GA may store cookies on your computer, and collect and process data based on your usage of this website. See GA's Privacy Policy for more information.
+
+Google AdSense
+This website uses GAS (Google AdSense) for advertising purposes and other features. GAS may store cookies on your computer, and collect and process data based on your usage of this website. See GAS's Privacy Policy for more information.
+
+Cookies
+We use "cookies" on this site. A cookie is a piece of data stored on a site visitor's hard drive to help us improve your access to our site and identify repeat visitors to our site. For instance, when we use a cookie to identify you, you would not have to log in a password more than once, thereby saving time while on our site. Cookies can also enable us to track and target the interests of our users to enhance the experience on our site. Usage of a cookie is in no way linked to any personally identifiable information on our site. Some of our business partners may use cookies on our site (for example, Google Analytics, Google AdSense, etc). However, we have no access to or control over these cookies.
+
+Links
+This website contains links to other sites. Please be aware that we are not responsible for the content or privacy practices of such other sites. We encourage our users to be aware when they leave our site and to read the privacy statements of any other site that collects personally identifiable information.
+
+Sharing
+We do not share any personal information collected by usage of this website.
+
+If you feel that we are not abiding by this privacy policy, you should contact us immediately via email at support@prizzventuresllc.com
