@@ -243,6 +243,7 @@
           privateChannels: [], // private channels have an added `password` field
           currentChannel: globalChannel,
           currentPrivateChannel: null,
+          encryptedPayloadCache: [],
           getActiveChannel() {
             return this.currentChannel || this.currentPrivateChannel
           },
@@ -289,6 +290,7 @@
             }
             this.privateChannels.push(newChannel)
             this.setCurrentPrivateChannel(newChannel)
+            this.encryptedPayloadCache.filter((encryptedPayload) => { return encryptedPayload.channelName === channelName }).forEach(this.putNewEncryptedMessagePayloadInChannel, this)
           },
           isActiveChannel(channelName, isPrivate) {
             if(isPrivate) {
@@ -310,6 +312,9 @@
             }
             this.putNewMessagePayloadInChannel(newMessagePayload)
           },
+          cacheEncryptedPayload(encryptedPayload) {
+            this.encryptedPayloadCache.push(encryptedPayload)
+          },
           async putNewEncryptedMessagePayloadInChannel(newMessagePayload) {
             if(!newMessagePayload.channelName) { return }
             let existingChannel = this.privateChannels.find(channel => {
@@ -317,7 +322,7 @@
             })
 
             if(!existingChannel) {
-              return
+              return this.cacheEncryptedPayload(newMessagePayload)
             }
 
             const channel = existingChannel
