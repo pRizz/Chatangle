@@ -110,7 +110,14 @@
               Utilizes <a href="https://vuejs.org/" target="_blank">Vue.js</a>, <a href="https://buefy.github.io/" target="_blank">Buefy</a>, <a href="https://bulma.io/" target="_blank">Bulma</a>, and <a href="https://nodejs.org/" target="_blank">Node.js</a>. Front-end adapted from <a href="https://github.com/lsquires/open-iota" target="_blank">Open IOTA</a>; thanks to Laurence Squires, for allowing me to fork his code. Thanks to the fine people on the IOTA Slack for pointing me in the right direction.
             </p>
             <br/>
-            <p>Source code will be open sourced on GitHub once the code quality and performance has reached a sufficient level.</p>
+            <p>View source code at
+              <a href="https://github.com/pRizz/Chatangle" class="button is-small" target="_blank">
+              <span class="icon">
+                <i class="fa fa-github"></i>
+              </span>
+              <span>&nbsp;Github</span>
+            </a>
+            </p>
           </div>
           <div class="column">
             <p>Copyright © 2017 Peter Ryszkiewicz</p>
@@ -168,9 +175,12 @@
   import IOTA from 'iota.lib.js'
   import TryteCodec from 'tryte-utf8-json-codec'
   import ChatangleCodec from 'chatangle-codec'
+  import curlTransaction from 'curl-transaction-core'
+  import curlImpl from 'curl-transaction-webgl2-impl'
 
   console.log('initializing App')
-  import curlLib from 'curl.lib.js'
+
+  let localAttachToTangle = null
 
   const chatangleBackendURL = `${process.env.IS_CHATANGLE_BACKEND_SECURED ? 'wss' : 'ws'}://${process.env.CHATANGLE_BACKEND_IP}:${process.env.CHATANGLE_BACKEND_PORT}`
   let messageKeyCount = 0
@@ -439,7 +449,7 @@
           provider: this.iota.provider
         })
 
-        this.iota.link.api.attachToTangle = this.generateLocalAttachToTangle()
+        this.iota.link.api.attachToTangle = localAttachToTangle
 
         let currentLink = this.iota.link
 
@@ -543,115 +553,6 @@
       generateDepth() {
         return Math.floor(Math.random() * (12 - 4 + 1)) + 4
       },
-      // adapted from https://github.com/iotaledger/wallet/blob/master/ui/js/iota.lightwallet.js
-      generateLocalAttachToTangle() {
-        const iota = this.iota.link
-        const MAX_TIMESTAMP_VALUE = (Math.pow(3, 27) - 1) / 2 // from curl.lib.js
-        return (trunkTransaction, branchTransaction, minWeightMagnitude, trytes, callback) => {
-          console.log('################## in localAttachToTangle')
-          const ccurlHashing = function(trunkTransaction, branchTransaction, minWeightMagnitude, trytes, callback) {
-            console.log('attempting curl hashing')
-//      console.log('iota: ', iota)
-//            console.log('this.iota: ', this.iota)
-            const iotaObj = iota;
-
-            // inputValidator: Check if correct hash
-            if (!iotaObj.valid.isHash(trunkTransaction)) {
-              return callback(new Error("Invalid trunkTransaction"));
-            }
-
-            // inputValidator: Check if correct hash
-            if (!iotaObj.valid.isHash(branchTransaction)) {
-              return callback(new Error("Invalid branchTransaction"));
-            }
-
-            // inputValidator: Check if int
-            if (!iotaObj.valid.isValue(minWeightMagnitude)) {
-              return callback(new Error("Invalid minWeightMagnitude"));
-            }
-
-            let finalBundleTrytes = [];
-            let previousTxHash;
-            let i = 0;
-
-            function loopTrytes() {
-              getBundleTrytes(trytes[i], function(error) {
-                if (error) {
-                  return callback(error);
-                } else {
-                  i++;
-                  if (i < trytes.length) {
-                    loopTrytes();
-                  } else {
-                    // reverse the order so that it's ascending from currentIndex
-                    return callback(null, finalBundleTrytes.reverse());
-                  }
-                }
-              });
-            }
-
-            function getBundleTrytes(thisTrytes, callback) {
-              // PROCESS LOGIC:
-              // Start with last index transaction
-              // Assign it the trunk / branch which the user has supplied
-              // IF there is a bundle, chain  the bundle transactions via
-              // trunkTransaction together
-
-              let txObject = iotaObj.utils.transactionObject(thisTrytes);
-              txObject.attachmentTimestamp = Date.now();
-              txObject.attachmentTimestampLowerBound = 0;
-              txObject.attachmentTimestampUpperBound = MAX_TIMESTAMP_VALUE;
-              // If this is the first transaction, to be processed
-              // Make sure that it's the last in the bundle and then
-              // assign it the supplied trunk and branch transactions
-              if (!previousTxHash) {
-                // Check if last transaction in the bundle
-                if (txObject.lastIndex !== txObject.currentIndex) {
-                  return callback(new Error("Wrong bundle order. The bundle should be ordered in descending order from currentIndex"));
-                }
-
-                txObject.trunkTransaction = trunkTransaction;
-                txObject.branchTransaction = branchTransaction;
-              } else {
-                // Chain the bundle together via the trunkTransaction (previous tx in the bundle)
-                // Assign the supplied trunkTransaciton as branchTransaction
-                txObject.trunkTransaction = previousTxHash;
-                txObject.branchTransaction = trunkTransaction;
-              }
-
-              let newTrytes = iotaObj.utils.transactionTrytes(txObject);
-//        console.log('curl: ', curl)
-              console.log('curlLib: ', curlLib)
-
-              curlLib.pow({trytes: newTrytes, minWeight: minWeightMagnitude}).then(function(nonce) {
-                var returnedTrytes = newTrytes.substr(0, 2673-81).concat(nonce);
-                var newTxObject= iotaObj.utils.transactionObject(returnedTrytes);
-
-                // Assign the previousTxHash to this tx
-                var txHash = newTxObject.hash;
-                previousTxHash = txHash;
-
-                finalBundleTrytes.push(returnedTrytes);
-                callback(null);
-              }).catch(callback);
-            }
-            loopTrytes()
-          }
-
-          ccurlHashing(trunkTransaction, branchTransaction, minWeightMagnitude, trytes, function(error, success) {
-            if (error) {
-              console.log(error);
-            } else {
-              console.log(success);
-            }
-            if (callback) {
-              return callback(error, success);
-            } else {
-              return success;
-            }
-          })
-        }
-      },
       async sendMessageToTanglePromise(name, messageText) {
         const transfer = await this.generateTransfer(name, messageText)
 
@@ -672,13 +573,21 @@
       }
     },
     mounted () {
-      try {
-        curlLib.init()
+      if(!curlImpl.error) {
+        const curl = curlTransaction({ curlImpl })
+        localAttachToTangle = function(trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray, callback) {
+          curl.curl({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray }).then((processedTrytes) => {
+            callback(null, processedTrytes)
+          }).catch((error) => {
+            callback(error)
+          })
+        }
         console.log("Your browser does support WebGL2")
-      } catch(e) {
+      } else {
         console.error("Your browser does not support WebGL2")
         this.isWebGL2Supported = false
       }
+
       this.connectToIOTA()
       this.connectToChatangleServer()
     }

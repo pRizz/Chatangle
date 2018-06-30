@@ -12,7 +12,6 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueClipboard from 'vue-clipboard2'
 // import VueAwesome from 'vue-awesome'
-import 'vue-awesome/icons'
 import 'font-awesome/css/font-awesome.css'
 
 Vue.use(VueClipboard)
