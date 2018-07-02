@@ -574,14 +574,7 @@
     },
     mounted () {
       if(!curlImpl.error) {
-        const curl = curlTransaction({ curlImpl })
-        localAttachToTangle = function(trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray, callback) {
-          curl.curl({ trunkTransaction, branchTransaction, minWeightMagnitude, trytesArray }).then((processedTrytes) => {
-            callback(null, processedTrytes)
-          }).catch((error) => {
-            callback(error)
-          })
-        }
+        localAttachToTangle = curlTransaction({ curlImpl }).localAttachToTangle
         console.log("Your browser does support WebGL2")
       } else {
         console.error("Your browser does not support WebGL2")
