@@ -50,7 +50,7 @@
 <script>
 
   import { Picker, Emoji } from 'emoji-mart-vue'
-  import BTooltip from "../../node_modules/buefy/src/components/tooltip/Tooltip.vue"
+  import BTooltip from 'buefy/src/components/tooltip/Tooltip.vue'
 
   const readyStates = {
     notSending: 'notSending',
