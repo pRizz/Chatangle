@@ -1,4 +1,7 @@
 # Chatangle
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/pRizz/Chatangle.svg)](https://greenkeeper.io/)
+
 A free, decentralized, global chatroom, powered by the IOTA tangle. This must be run in conjunction with the [Chatangle Backend](https://github.com/pRizz/Chatangle-Backend).
 
 # Usage
