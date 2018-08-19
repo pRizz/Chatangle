@@ -41,10 +41,10 @@
 </template>
 
 <script>
-  import MessageInput from "./MessageInput.vue"
-  import ChannelChatroom from "./ChannelChatroom.vue"
-  import ChannelList from "./ChannelList.vue"
-  import PrivateChannelList from "./PrivateChannelList"
+  import MessageInput from './MessageInput.vue'
+  import ChannelChatroom from './ChannelChatroom.vue'
+  import ChannelList from './ChannelList.vue'
+  import PrivateChannelList from './PrivateChannelList'
 
   export default {
     components: {

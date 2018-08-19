@@ -48,7 +48,6 @@
 </template>
 
 <script>
-
   import { Picker, Emoji } from 'emoji-mart-vue'
   import BTooltip from 'buefy/src/components/tooltip/Tooltip.vue'
 

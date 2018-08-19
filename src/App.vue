@@ -502,14 +502,14 @@
           if(retried) { return }
           retried = true
           this.webSocketRetryTimer *= 1.21
-          setTimeout(() => {this.connectToChatangleServer()}, this.webSocketRetryTimer)
+          setTimeout(() => { this.connectToChatangleServer() }, this.webSocketRetryTimer)
         })
         webSocketClient.addEventListener('close', message => {
           console.log(`${new Date().toISOString()}: WebSocket close:`, message)
           if(retried) { return }
           retried = true
           this.webSocketRetryTimer *= 1.21
-          setTimeout(() => {this.connectToChatangleServer()}, this.webSocketRetryTimer)
+          setTimeout(() => { this.connectToChatangleServer() }, this.webSocketRetryTimer)
         })
       },
       updateClientCount (clientCountPayload) {
@@ -561,7 +561,7 @@
           if(!this.iota || !this.iota.link) { return reject('no link') }
           if(this.iota.status !== 'Connected') { return reject('not connected') }
 
-          this.iota.link.api.sendTransfer(this.generateSeed(), this.generateDepth(), 14, transfer, function(error, success){
+          this.iota.link.api.sendTransfer(this.generateSeed(), this.generateDepth(), 14, transfer, function(error, success) {
             if (error) {
               console.error(`${new Date().toISOString()}: an error occurred while sending to the tangle: `, error)
               return reject(error)
@@ -575,9 +575,9 @@
     mounted () {
       if(!curlImpl.error) {
         localAttachToTangle = curlTransaction({ curlImpl }).localAttachToTangle
-        console.log("Your browser does support WebGL2")
+        console.log('Your browser does support WebGL2')
       } else {
-        console.error("Your browser does not support WebGL2")
+        console.error('Your browser does not support WebGL2')
         this.isWebGL2Supported = false
       }
 
