@@ -11,7 +11,6 @@ import 'buefy/lib/buefy.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueClipboard from 'vue-clipboard2'
-// import VueAwesome from 'vue-awesome'
 import 'font-awesome/css/font-awesome.css'
 
 Vue.use(VueClipboard)
@@ -19,8 +18,6 @@ Vue.use(Buefy)
 Vue.use(AsyncComputed)
 Vue.use(require('vue-moment'))
 Vue.use(VueAxios, axios)
-// Vue.use(VueAwesome)
-// Vue.use(require('vue-awesome'))
 Vue.use(require('vue-truncate-filter'))
 
 Vue.config.productionTip = false

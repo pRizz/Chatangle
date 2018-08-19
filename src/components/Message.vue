@@ -2,7 +2,9 @@
   <div class="box">
     <article class="media">
       <div class="media-left">
-        <b-icon icon="person" size="is-medium"></b-icon>
+        <span class="icon">
+          <i class="material-icons">person</i>
+        </span>
       </div>
 
       <div class="media-content">

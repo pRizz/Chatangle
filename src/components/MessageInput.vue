@@ -4,8 +4,8 @@
       <div class="field">
         <p class="control has-icons-left">
           <input class="input" type="text" maxlength="50" v-model="name" :disabled="isSendingMessage" placeholder="Your name (optional; 50 characters max)">
-          <span class="icon is-small is-left">
-            <b-icon icon="person" size="is-medium"></b-icon>
+          <span class="icon">
+            <i class="material-icons">person</i>
           </span>
         </p>
       </div>
@@ -21,7 +21,7 @@
           <picker
             style="position: absolute; right: 0px;"
             set="apple"
-            @click="addEmoji"
+            @select="addEmoji"
             v-bind:class="{ 'is-hidden': pickerHidden }"
           ></picker>
         </p>

@@ -21,7 +21,7 @@
           <div class="navbar-end">
             <a href="https://github.com/pRizz/Chatangle" class="navbar-item" target="_blank">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fa fa-github" style="font-size: 24px"></i>
               </span>
               <span>&nbsp;Github</span>
             </a>
@@ -37,7 +37,9 @@
                     'is-primary': iota.status === 'Connected',
                     'is-danger': iota.status === 'Failed'}">
                   <span> {{ this.iota.status }} </span>
-                  <b-icon icon="arrow_drop_down"></b-icon>
+                  <span class="icon">
+                    <i class="material-icons">arrow_drop_down</i>
+                  </span>
                 </button>
 
                 <b-dropdown-item custom>
@@ -68,8 +70,12 @@
                 <div v-for="prov in providerList">
                   <b-dropdown-item :value="prov">
                     <div class="media">
-                      <b-icon v-if="prov.includes('https:')" class="media-left" icon="lock"></b-icon>
-                      <b-icon v-else class="media-left" icon="public"></b-icon>
+                      <span v-if="prov.includes('https:')" class="media-left icon">
+                        <i class="material-icons">lock</i>
+                      </span>
+                      <span v-else class="media-left icon">
+                        <i class="material-icons">public</i>
+                      </span>
                       <div class="media-content">
                         <h3>{{ prov }}</h3>
                       </div>
