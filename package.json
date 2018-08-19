@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A free, decentralized, global chatroom, powered by the IOTA tangle",
   "author": "Peter Ryszkiewicz <peter.ryszkiewicz@prizzventuresllc.com>",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/pRizz/Chatangle.git"
