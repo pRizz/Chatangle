@@ -37,5 +37,9 @@ module.exports = merge(baseWebpackConfig, {
     }),
     new FriendlyErrorsPlugin(),
     new VueLoaderPlugin()
-  ]
+  ],
+  optimization: {
+    minimize: false
+  },
+  mode: 'development'
 })
