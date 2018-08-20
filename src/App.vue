@@ -139,11 +139,11 @@
         <div class="has-text-centered">
           <p>If you like this app and want to support me making more apps, please consider tipping me at these addresses:</p>
           <div>
-            IOTA: <code style="color: blue; overflow-wrap: break-word; ">WJKGMXJUQAKBBIVOFLEHUKOJLJFJVKOLFADHUIZAKBNHSWDAJAEIRQIWSFPKCLQG9TKXOSPBASN9MQGNWZJZYGYBAD</code>
+            IOTA: <code style="color: blue; overflow-wrap: break-word; ">{{ pRizzTipAddresses.IOTA }}</code>
           </div>
           <div>
             NANO:
-            <code style="color: blue; overflow-wrap: break-word;">xrb_1gtwryf4qkk51shi8tbyr988kqkc9cnadtm1xym3ito5sy948e4q4y8mfifd</code>
+            <code style="color: blue; overflow-wrap: break-word;">{{ pRizzTipAddresses.NANO }}</code>
           </div>
           <div>
             Thanks for your support!
@@ -183,6 +183,7 @@
   import ChatangleCodec from 'chatangle-codec'
   import curlTransaction from 'curl-transaction-core'
   import curlImpl from 'curl-transaction-webgl2-impl'
+  import pRizzTipAddresses from 'prizz-tip-addresses'
 
   console.log('initializing App')
 
@@ -239,6 +240,7 @@
         unreadCount: 0
       }
       return {
+        pRizzTipAddresses,
         navVisible: false,
         customProvider: '',
         providerList: defaultProviderList,
