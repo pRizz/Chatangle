@@ -203,7 +203,7 @@
   }
 
   // public node list from IOTA's mainnet nodes, https://iotasupport.com/providers.json, and http://iotanode.host/
-  const defaultProviderList = [
+  let defaultProviderList = [
     // http nodes
     'http://eugene.iota.community:14265',
     'http://node01.iotatoken.nl:14265',
@@ -227,7 +227,20 @@
     'https://wallet2.iota.town:443',
   ]
 
-  const initialProvider = 'https://iota-node-nelson.prizziota.com:443'
+  let initialProvider = 'https://iota-node-nelson.prizziota.com:443'
+
+  if(process.env.IOTA_PROVIDERS_JSON) {
+    try {
+      const iotaProviders = JSON.parse(process.env.IOTA_PROVIDERS_JSON)
+      if(!Array.isArray(iotaProviders)) { throw 0 }
+      if(iotaProviders.length <= 0) { throw 0 }
+      iotaProviders.forEach((iotaProvider) => { new URL(iotaProvider) })
+      defaultProviderList = iotaProviders
+      initialProvider = iotaProviders[0]
+    } catch(e) {
+      console.log('Invalid IOTA_PROVIDERS_JSON supplied: ', e)
+    }
+  }
 
   export default {
     name: 'app',
