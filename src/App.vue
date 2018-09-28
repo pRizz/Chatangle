@@ -34,7 +34,7 @@
 
                 <button type="button" slot="trigger" class="button" :class="{
                     'is-loading': iota.status === 'Connecting',
-                    'is-primary': iota.status === 'Connected',
+                    'is-primary-purple': iota.status === 'Connected',
                     'is-danger': iota.status === 'Failed'}">
                   <span> {{ this.iota.status }} </span>
                   <span class="icon">
@@ -47,7 +47,7 @@
                   <b-field class="subtitle">
                     <b-input expanded spellcheck="false" readonly :value="iota.latestMilestone"></b-input>
                     <p class="control">
-                      <button class="button is-primary" v-clipboard:copy="iota.latestMilestone">Copy</button>
+                      <button class="button is-primary-purple" v-clipboard:copy="iota.latestMilestone">Copy</button>
                     </p>
                   </b-field>
                 </b-dropdown-item>
@@ -56,7 +56,7 @@
                   <b-field class="subtitle">
                     <b-input expanded spellcheck="false" readonly :value="iota.latestSolidMilestone"></b-input>
                     <p class="control">
-                      <button class="button is-primary" v-clipboard:copy="iota.latestSolidMilestone">Copy</button>
+                      <button class="button is-primary-purple" v-clipboard:copy="iota.latestSolidMilestone">Copy</button>
                     </p>
                   </b-field>
                 </b-dropdown-item>
@@ -87,7 +87,7 @@
                   <b-field class="subtitle">
                     <b-input expanded spellcheck="false" v-model.sync="customProvider"></b-input>
                     <p class="control">
-                      <button class="button is-primary" @click="addProvider">Add</button>
+                      <button class="button is-primary-purple" @click="addProvider">Add</button>
                     </p>
                   </b-field>
                 </b-dropdown-item>

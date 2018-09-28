@@ -22,7 +22,7 @@
       </div>
 
       <a v-for="channel in channelController.channels" v-on:click="setCurrentChannel(channel)" class="hover-channel panel-block" v-bind:class="{'active-channel': isActiveChannel(channel.name), 'has-text-weight-bold': shouldChannelBeBold(channel)}">
-        <b-tag rounded type="is-primary" style="margin-right: 8px" v-if="hasUnread(channel)" >{{unreadDisplayText(channel)}}</b-tag>
+        <b-tag rounded type="is-primary-purple" style="margin-right: 8px" v-if="hasUnread(channel)" >{{unreadDisplayText(channel)}}</b-tag>
         <span class="hover-channel hover-child panel-icon" v-bind:class="{'active-channel': isActiveChannel(channel.name)}">
           <span class="hover-channel hover-child icon is-small is-left" v-bind:class="{'active-channel': isActiveChannel(channel.name)}">
             <i class="material-icons" style="font-size: 18px">wifi</i>

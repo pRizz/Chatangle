@@ -1,0 +1,438 @@
+.button.is-primary-purple {
+  background-color: #7957d5;
+  border-color: transparent;
+  color: white;
+}
+
+.button.is-primary-purple:hover, .button.is-primary-purple.is-hovered {
+  background-color: #714dd2;
+  border-color: transparent;
+  color: white;
+}
+
+.button.is-primary-purple:focus, .button.is-primary-purple.is-focused {
+  border-color: transparent;
+  color: white;
+}
+
+.button.is-primary-purple:focus:not(:active), .button.is-primary-purple.is-focused:not(:active) {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(121, 87, 213, 0.25);
+  box-shadow: 0 0 0 0.125em rgba(121, 87, 213, 0.25);
+}
+
+.button.is-primary-purple:active, .button.is-primary-purple.is-active {
+  background-color: #6943d0;
+  border-color: transparent;
+  color: white;
+}
+
+.button.is-primary-purple[disabled] {
+  background-color: #7957d5;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+.button.is-primary-purple.is-inverted {
+  background-color: white;
+  color: #7957d5;
+}
+
+.button.is-primary-purple.is-inverted:hover {
+  background-color: #f2f2f2;
+}
+
+.button.is-primary-purple.is-inverted[disabled] {
+  background-color: white;
+  border-color: transparent;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #7957d5;
+}
+
+.button.is-primary-purple.is-loading::after {
+  border-color: transparent transparent white white !important;
+}
+
+.button.is-primary-purple.is-outlined {
+  background-color: transparent;
+  border-color: #7957d5;
+  color: #7957d5;
+}
+
+.button.is-primary-purple.is-outlined:hover, .button.is-primary-purple.is-outlined:focus {
+  background-color: #7957d5;
+  border-color: #7957d5;
+  color: white;
+}
+
+.button.is-primary-purple.is-outlined.is-loading::after {
+  border-color: transparent transparent #7957d5 #7957d5 !important;
+}
+
+.button.is-primary-purple.is-outlined[disabled] {
+  background-color: transparent;
+  border-color: #7957d5;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: #7957d5;
+}
+
+.button.is-primary-purple.is-inverted.is-outlined {
+  background-color: transparent;
+  border-color: white;
+  color: white;
+}
+
+.button.is-primary-purple.is-inverted.is-outlined:hover, .button.is-primary-purple.is-inverted.is-outlined:focus {
+  background-color: white;
+  color: #7957d5;
+}
+
+.button.is-primary-purple.is-inverted.is-outlined[disabled] {
+  background-color: transparent;
+  border-color: white;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  color: white;
+}
+
+
+.input.is-primary-purple, .taginput .is-primary-purple.taginput-container.is-focusable,
+.textarea.is-primary-purple {
+  border-color: #7957d5;
+}
+
+.input.is-primary-purple:focus, .taginput .is-primary-purple.taginput-container.is-focusable:focus, .input.is-primary-purple.is-focused, .taginput .is-primary-purple.is-focused.taginput-container.is-focusable, .input.is-primary-purple:active, .taginput .is-primary-purple.taginput-container.is-focusable:active, .input.is-primary-purple.is-active, .taginput .is-primary-purple.is-active.taginput-container.is-focusable,
+.textarea.is-primary-purple:focus,
+.textarea.is-primary-purple.is-focused,
+.textarea.is-primary-purple:active,
+.textarea.is-primary-purple.is-active {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(121, 87, 213, 0.25);
+  box-shadow: 0 0 0 0.125em rgba(121, 87, 213, 0.25);
+}
+
+.select.is-primary-purple:not(:hover)::after {
+  border-color: #7957d5;
+}
+
+.select.is-primary-purple select {
+  border-color: #7957d5;
+}
+
+.select.is-primary-purple select:hover, .select.is-primary-purple select.is-hovered {
+  border-color: #6943d0;
+}
+
+.select.is-primary-purple select:focus, .select.is-primary-purple select.is-focused, .select.is-primary-purple select:active, .select.is-primary-purple select.is-active {
+  -webkit-box-shadow: 0 0 0 0.125em rgba(121, 87, 213, 0.25);
+  box-shadow: 0 0 0 0.125em rgba(121, 87, 213, 0.25);
+}
+
+.file.is-primary-purple .file-cta {
+  background-color: #7957d5;
+  border-color: transparent;
+  color: white;
+}
+
+.file.is-primary-purple:hover .file-cta, .file.is-primary-purple.is-hovered .file-cta {
+  background-color: #714dd2;
+  border-color: transparent;
+  color: white;
+}
+
+.file.is-primary-purple:focus .file-cta, .file.is-primary-purple.is-focused .file-cta {
+  border-color: transparent;
+  -webkit-box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.25);
+  box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.25);
+  color: white;
+}
+
+.file.is-primary-purple:active .file-cta, .file.is-primary-purple.is-active .file-cta {
+  background-color: #6943d0;
+  border-color: transparent;
+  color: white;
+}
+
+.help.is-primary-purple {
+  color: #7957d5;
+}
+
+.notification.is-primary-purple {
+  background-color: #7957d5;
+  color: white;
+}
+
+.progress.is-primary-purple::-webkit-progress-value {
+  background-color: #7957d5;
+}
+
+.progress.is-primary-purple::-moz-progress-bar {
+  background-color: #7957d5;
+}
+
+.progress.is-primary-purple::-ms-fill {
+  background-color: #7957d5;
+}
+
+
+.table td.is-primary-purple,
+.table th.is-primary-purple {
+  background-color: #7957d5;
+  border-color: #7957d5;
+  color: white;
+}
+
+.tag:not(body).is-primary-purple {
+  background-color: #7957d5;
+  color: white;
+}
+
+.message.is-primary-purple {
+  background-color: #f8f7fd;
+}
+
+.message.is-primary-purple .message-header {
+  background-color: #7957d5;
+  color: white;
+}
+
+.message.is-primary-purple .message-body {
+  border-color: #7957d5;
+  color: #5534ae;
+}
+
+
+.navbar.is-primary-purple {
+  background-color: #7957d5;
+  color: white;
+}
+
+.navbar.is-primary-purple .navbar-brand > .navbar-item,
+.navbar.is-primary-purple .navbar-brand .navbar-link {
+  color: white;
+}
+
+.navbar.is-primary-purple .navbar-brand > a.navbar-item:hover, .navbar.is-primary-purple .navbar-brand > a.navbar-item.is-active,
+.navbar.is-primary-purple .navbar-brand .navbar-link:hover,
+.navbar.is-primary-purple .navbar-brand .navbar-link.is-active {
+  background-color: #6943d0;
+  color: white;
+}
+
+.navbar.is-primary-purple .navbar-brand .navbar-link::after {
+  border-color: white;
+}
+
+@media screen and (min-width: 1088px) {
+  .navbar.is-primary-purple .navbar-start > .navbar-item,
+  .navbar.is-primary-purple .navbar-start .navbar-link,
+  .navbar.is-primary-purple .navbar-end > .navbar-item,
+  .navbar.is-primary-purple .navbar-end .navbar-link {
+    color: white;
+  }
+  .navbar.is-primary-purple .navbar-start > a.navbar-item:hover, .navbar.is-primary-purple .navbar-start > a.navbar-item.is-active,
+  .navbar.is-primary-purple .navbar-start .navbar-link:hover,
+  .navbar.is-primary-purple .navbar-start .navbar-link.is-active,
+  .navbar.is-primary-purple .navbar-end > a.navbar-item:hover,
+  .navbar.is-primary-purple .navbar-end > a.navbar-item.is-active,
+  .navbar.is-primary-purple .navbar-end .navbar-link:hover,
+  .navbar.is-primary-purple .navbar-end .navbar-link.is-active {
+    background-color: #6943d0;
+    color: white;
+  }
+  .navbar.is-primary-purple .navbar-start .navbar-link::after,
+  .navbar.is-primary-purple .navbar-end .navbar-link::after {
+    border-color: white;
+  }
+  .navbar.is-primary-purple .navbar-item.has-dropdown:hover .navbar-link,
+  .navbar.is-primary-purple .navbar-item.has-dropdown.is-active .navbar-link {
+    background-color: #6943d0;
+    color: white;
+  }
+  .navbar.is-primary-purple .navbar-dropdown a.navbar-item.is-active {
+    background-color: #7957d5;
+    color: white;
+  }
+}
+
+.hero.is-primary-purple {
+  background-color: #7957d5;
+  color: white;
+}
+
+.hero.is-primary-purple a:not(.button):not(.dropdown-item):not(.dropdown .dropdown-menu .has-link a):not(.tag),
+.hero.is-primary-purple strong {
+  color: inherit;
+}
+
+.hero.is-primary-purple .title {
+  color: white;
+}
+
+.hero.is-primary-purple .subtitle {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.hero.is-primary-purple .subtitle a:not(.button),
+.hero.is-primary-purple .subtitle strong {
+  color: white;
+}
+
+@media screen and (max-width: 1087px) {
+  .hero.is-primary-purple .navbar-menu {
+    background-color: #7957d5;
+  }
+}
+
+.hero.is-primary-purple .navbar-item,
+.hero.is-primary-purple .navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero.is-primary-purple a.navbar-item:hover, .hero.is-primary-purple a.navbar-item.is-active,
+.hero.is-primary-purple .navbar-link:hover,
+.hero.is-primary-purple .navbar-link.is-active {
+  background-color: #6943d0;
+  color: white;
+}
+
+.hero.is-primary-purple .tabs a {
+  color: white;
+  opacity: 0.9;
+}
+
+.hero.is-primary-purple .tabs a:hover {
+  opacity: 1;
+}
+
+.hero.is-primary-purple .tabs li.is-active a {
+  opacity: 1;
+}
+
+.hero.is-primary-purple .tabs.is-boxed a, .hero.is-primary-purple .tabs.is-toggle a {
+  color: white;
+}
+
+.hero.is-primary-purple .tabs.is-boxed a:hover, .hero.is-primary-purple .tabs.is-toggle a:hover {
+  background-color: rgba(10, 10, 10, 0.1);
+}
+
+.hero.is-primary-purple .tabs.is-boxed li.is-active a, .hero.is-primary-purple .tabs.is-boxed li.is-active a:hover, .hero.is-primary-purple .tabs.is-toggle li.is-active a, .hero.is-primary-purple .tabs.is-toggle li.is-active a:hover {
+  background-color: white;
+  border-color: white;
+  color: #7957d5;
+}
+
+.hero.is-primary-purple.is-bold {
+  background-image: linear-gradient(141deg, #3725d4 0%, #7957d5 71%, #9b67df 100%);
+}
+
+@media screen and (max-width: 768px) {
+  .hero.is-primary-purple.is-bold .navbar-menu {
+    background-image: linear-gradient(141deg, #3725d4 0%, #7957d5 71%, #9b67df 100%);
+  }
+}
+
+.b-checkbox.checkbox input[type=checkbox]:checked + .check.is-primary-purple {
+  background: #7957d5 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1 1'%3E%3Cpath style='fill:white' d='M 0.04038059,0.6267767 0.14644661,0.52071068 0.42928932,0.80355339 0.3232233,0.90961941 z M 0.21715729,0.80355339 0.85355339,0.16715729 0.95961941,0.2732233 0.3232233,0.90961941 z'%3E%3C/path%3E%3C/svg%3E") no-repeat center center;
+  border-color: #7957d5;
+}
+
+
+.b-checkbox.checkbox:hover input[type=checkbox] + .check.is-primary-purple {
+  border-color: #7957d5;
+}
+
+
+.b-checkbox.checkbox:focus input[type=checkbox]:checked + .check.is-primary-purple {
+  -webkit-box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.8);
+  box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.8);
+}
+
+.datepicker .datepicker-table .datepicker-body.has-events .datepicker-cell.has-event .events .event.is-primary-purple {
+  background-color: #7957d5;
+}
+
+
+.datepicker .datepicker-table .datepicker-body.has-events .datepicker-cell.is-selected .events .event.is-primary-purple {
+  background-color: #aa94e4;
+}
+
+
+.notices .toast.is-primary-purple {
+  color: white;
+  background: #7957d5;
+}
+
+.notices .snackbar .action.is-primary-purple .button {
+  color: #7957d5;
+}
+
+.b-radio.radio input[type=radio] + .check.is-primary-purple:before {
+  background: #7957d5;
+}
+
+.b-radio.radio input[type=radio]:checked + .check.is-primary-purple {
+  border-color: #7957d5;
+}
+
+.b-radio.radio:hover input[type=radio] + .check.is-primary-purple {
+  border-color: #7957d5;
+}
+
+.b-radio.radio:focus input[type=radio]:checked + .check.is-primary-purple {
+  -webkit-box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.8);
+  box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.8);
+}
+
+.switch input[type=checkbox]:checked + .check.is-primary-purple {
+  background: #7957d5;
+}
+
+.switch:hover input[type=checkbox]:checked + .check.is-primary-purple {
+  background: rgba(121, 87, 213, 0.9);
+}
+
+.switch:focus input[type=checkbox]:checked + .check.is-primary-purple {
+  -webkit-box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.8);
+  box-shadow: 0 0 0.5em rgba(121, 87, 213, 0.8);
+}
+
+.tooltip.is-top.is-primary-purple:before {
+  border-top: 5px solid #7957d5;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  bottom: calc(100% + 2px);
+}
+
+.tooltip.is-right.is-primary-purple:before {
+  border-top: 5px solid transparent;
+  border-right: 5px solid #7957d5;
+  border-bottom: 5px solid transparent;
+  left: calc(100% + 2px);
+}
+
+.tooltip.is-bottom.is-primary-purple:before {
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid #7957d5;
+  border-left: 5px solid transparent;
+  top: calc(100% + 2px);
+}
+
+.tooltip.is-left.is-primary-purple:before {
+  border-top: 5px solid transparent;
+  border-bottom: 5px solid transparent;
+  border-left: 5px solid #7957d5;
+  right: calc(100% + 2px);
+}
+
+.tooltip.is-primary-purple:after {
+  background: #7957d5;
+  color: white;
+}
+
+.upload .upload-draggable:hover.is-primary-purple, .upload .upload-draggable.is-hovered.is-primary-purple {
+  border-color: #7957d5;
+  background: rgba(121, 87, 213, 0.05);
+}
