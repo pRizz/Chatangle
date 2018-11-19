@@ -29,7 +29,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
     "babel-preset-stage-2": "^6.24.1",
-    "buefy": "^0.6.7",
+    "buefy": "^0.7.1",
     "chalk": "^2.4.1",
     "chatangle-codec": "^1.0.1",
     "compression-webpack-plugin": "^1.1.12",
