@@ -19,7 +19,7 @@
             <emoji emoji="smiley"></emoji>
           </span>
           <picker
-            style="position: absolute; right: 0px;"
+            style="position: absolute; right: 0px; z-index: 100;"
             set="apple"
             @select="addEmoji"
             v-bind:class="{ 'is-hidden': pickerHidden }"
@@ -102,6 +102,7 @@
           this.readyState = this.readyStates.notSending
           console.log('promise succeeded')
           this.messageText = ''
+          this.imgurLink = ''
           this.mostRecentSendDuration = sendDurationMS
         }).catch((error) => {
           this.readyState = this.readyStates.sendingFailed

@@ -59,7 +59,7 @@
             }, 2000)
             return
           }
-          this.window.imgurEmbed && this.window.imgurEmbed.createIframe() // FIXME: undocumented API
+          this.window.imgurEmbed && typeof this.window.imgurEmbed.createIframe === 'function' && this.window.imgurEmbed.createIframe() // FIXME: undocumented API
         }, 10)
       }
     },
