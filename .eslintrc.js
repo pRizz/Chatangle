@@ -27,6 +27,7 @@ module.exports = {
     'keyword-spacing': 0,
     'comma-dangle': 0,
     'no-mixed-operators': 0,
-    'prefer-promise-reject-errors': 0
+    'prefer-promise-reject-errors': 0,
+    'no-trailing-spaces': 0
   }
 }

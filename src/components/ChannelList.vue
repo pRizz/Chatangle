@@ -16,7 +16,7 @@
         <p class="control has-icons-left">
           <input class="input is-small" type="text" placeholder="Filter (Not yet implemented)">
           <span class="icon is-small is-left">
-            <i class="material-icons" style="font-size: 18px">search</i>
+            <b-icon icon="magnify"></b-icon>
           </span>
         </p>
       </div>
@@ -25,7 +25,7 @@
         <b-tag rounded type="is-primary-purple" style="margin-right: 8px" v-if="hasUnread(channel)" >{{unreadDisplayText(channel)}}</b-tag>
         <span class="hover-channel hover-child panel-icon" v-bind:class="{'active-channel': isActiveChannel(channel.name)}">
           <span class="hover-channel hover-child icon is-small is-left" v-bind:class="{'active-channel': isActiveChannel(channel.name)}">
-            <i class="material-icons" style="font-size: 18px">wifi</i>
+            <i class="fas fa-wifi"></i>
           </span>
         </span>
         {{ truncateChannelName(channel.name)}}

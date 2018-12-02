@@ -1,14 +1,14 @@
 <template>
   <article class="media box">
     <div class="media-content">
+
       <div class="field">
         <p class="control has-icons-left">
           <input class="input" type="text" maxlength="50" v-model="name" :disabled="isSendingMessage" placeholder="Your name (optional; 50 characters max)">
-          <span class="icon">
-            <i class="material-icons">person</i>
-          </span>
+            <b-icon icon="account"></b-icon>
         </p>
       </div>
+
       <div class="field">
         <p class="control">
           <textarea class="textarea" rows="2" maxlength="250" v-model="messageText" :disabled="isSendingMessage" placeholder="Your message (250 characters max)"></textarea>
@@ -26,6 +26,16 @@
           ></picker>
         </p>
       </div>
+
+      <div class="field">
+        <p class="control has-icons-left">
+          <input class="input" type="text" maxlength="100" v-model="imgurLink" :disabled="isSendingMessage" placeholder="An imgur link (optional)">
+          <span class="icon">
+            <b-icon icon="image"></b-icon>
+          </span>
+        </p>
+      </div>
+
       <nav class="level">
         <div class="level-left">
           <div class="level-item">
@@ -50,6 +60,7 @@
 <script>
   import { Picker, Emoji } from 'emoji-mart-vue'
   import BTooltip from 'buefy/src/components/tooltip/Tooltip.vue'
+  import BIcon from "buefy/src/components/icon/Icon";
 
   const readyStates = {
     notSending: 'notSending',
@@ -61,6 +72,7 @@
     name: 'message-input',
     props: ['messageSenderDelegate', 'isWebGL2Supported'],
     components: {
+      BIcon,
       BTooltip,
       picker: Picker,
       emoji: Emoji
@@ -69,6 +81,7 @@
       return {
         name: '',
         messageText: '',
+        imgurLink: '',
         readyStates: readyStates,
         readyState: readyStates.notSending,
         mostRecentSendDuration: null,
@@ -81,7 +94,11 @@
         if(!this.isWebGL2Supported) { return }
 
         this.readyState = this.readyStates.sending
-        this.messageSenderDelegate.sendMessageToTanglePromise(this.name, this.messageText).then((sendDurationMS) => {
+        this.messageSenderDelegate.sendMessageToTanglePromise({
+          name: this.name,
+          messageText: this.messageText,
+          imgurLink: this.imgurLink
+        }).then((sendDurationMS) => {
           this.readyState = this.readyStates.notSending
           console.log('promise succeeded')
           this.messageText = ''

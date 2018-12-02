@@ -21,7 +21,7 @@
           <div class="navbar-end">
             <a href="https://github.com/pRizz/Chatangle" class="navbar-item" target="_blank">
               <span class="icon">
-                <i class="fa fa-github" style="font-size: 24px"></i>
+                <i class="fab fa-github"></i>
               </span>
               <span>&nbsp;Github</span>
             </a>
@@ -38,7 +38,7 @@
                     'is-danger': iota.status === 'Failed'}">
                   <span> {{ this.iota.status }} </span>
                   <span class="icon">
-                    <i class="material-icons">arrow_drop_down</i>
+                    <i class="fas fa-caret-down"></i>
                   </span>
                 </button>
 
@@ -71,10 +71,10 @@
                   <b-dropdown-item :value="prov">
                     <div class="media">
                       <span v-if="prov.includes('https:')" class="media-left icon">
-                        <i class="material-icons">lock</i>
+                        <i class="mdi mdi-lock"></i>
                       </span>
                       <span v-else class="media-left icon">
-                        <i class="material-icons">public</i>
+                        <i class="fa fa-wifi"></i>
                       </span>
                       <div class="media-content">
                         <h3>{{ prov }}</h3>
@@ -119,7 +119,7 @@
             <p>View source code at
               <a href="https://github.com/pRizz/Chatangle" class="button is-small" target="_blank">
               <span class="icon">
-                <i class="fa fa-github"></i>
+                <i class="fab fa-github"></i>
               </span>
               <span>&nbsp;Github</span>
             </a>
@@ -378,6 +378,7 @@
             const newMessage = {
               name: name,
               message: decryptedMessagePayload.message,
+              imgurHash: decryptedMessagePayload.imgurHash,
               txHash: txHash,
               date: date,
               key: messageKeyCount++
@@ -416,6 +417,7 @@
             const newMessage = {
               name: name,
               message: messageText,
+              imgurHash: newMessagePayload.imgurHash,
               txHash: txHash,
               date: date,
               key: messageKeyCount++
@@ -537,10 +539,36 @@
         if(!clientCountPayload || !clientCountPayload.clientCount) { return }
         this.clientCount = clientCountPayload.clientCount
       },
-      async generateTransfer (name, message) {
+      imgurHashFromLink({ imgurLink }) {
+        if(!imgurLink) { return null }
+
+        let imgurURL
+
+        try {
+          imgurURL = new URL(imgurLink)
+        } catch(e) {
+          return null
+        }
+
+        if(!imgurURL.hostname.endsWith('imgur.com')) { return null }
+
+        const pathname = imgurURL.pathname
+        const paths = pathname.split('/')
+
+        if(paths.length === 0) { return null }
+
+        const imgurHash = paths[paths.length - 1]
+        return imgurHash
+      },
+      async generateTransfer({ name, messageText, imgurLink }) {
         let payload = {
           name,
-          message
+          message: messageText,
+        }
+
+        const imgurHash = this.imgurHashFromLink({ imgurLink })
+        if(imgurHash) {
+          payload['imgurHash'] = imgurHash
         }
 
         let transferMessage = {
@@ -574,8 +602,8 @@
       generateDepth() {
         return Math.floor(Math.random() * (12 - 4 + 1)) + 4
       },
-      async sendMessageToTanglePromise(name, messageText) {
-        const transfer = await this.generateTransfer(name, messageText)
+      async sendMessageToTanglePromise({ name, messageText, imgurLink }) {
+        const transfer = await this.generateTransfer({ name, messageText, imgurLink })
 
         return new Promise((resolve, reject) => {
           const startTime = performance.now()

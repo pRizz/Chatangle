@@ -3,7 +3,7 @@
     <article class="media">
       <div class="media-left">
         <span class="icon">
-          <i class="material-icons">person</i>
+          <b-icon icon="account"></b-icon>
         </span>
       </div>
 
@@ -15,6 +15,11 @@
             <div>
               {{ messageData.message }}
             </div>
+          </div>
+          <div v-if="messageData.imgurHash">
+            <blockquote class="imgur-embed-pub" lang="en" :data-id="'a/' + messageData.imgurHash">
+              <a :href="'https://imgur.com/gallery/' + messageData.imgurHash">Imgur link</a>
+            </blockquote>
           </div>
         </div>
 
@@ -34,10 +39,32 @@
   export default {
     name: 'message',
     props: ['messageData'],
+    data() {
+      return {
+        window
+      }
+    },
     computed: {
       transactionHashTangleExplorerLink () {
         return `https://open-iota.prizziota.com/#/search/tx/${this.messageData.txHash}`
       }
+    },
+    methods: {
+      renderImgurFrame() {
+        if(!this.messageData.imgurHash) { return }
+        setTimeout(() => {
+          if(!this.window.imgurEmbed) {
+            setTimeout(() => {
+              this.renderImgurFrame()
+            }, 2000)
+            return
+          }
+          this.window.imgurEmbed && this.window.imgurEmbed.createIframe() // FIXME: undocumented API
+        }, 10)
+      }
+    },
+    mounted() {
+      this.renderImgurFrame()
     }
   }
 </script>

@@ -11,8 +11,9 @@ import 'buefy/dist/buefy.css'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueClipboard from 'vue-clipboard2'
-import 'font-awesome/css/font-awesome.css'
 import './style/common.css'
+import '@fortawesome/fontawesome-free/css/all.min.css'
+import '@mdi/font/css/materialdesignicons.min.css'
 
 Vue.use(VueClipboard)
 Vue.use(Buefy)
