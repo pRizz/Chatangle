@@ -36,7 +36,7 @@
     "chatangle-codec": "^1.0.1",
     "compression-webpack-plugin": "^1.1.12",
     "connect-history-api-fallback": "^1.5.0",
-    "copy-webpack-plugin": "^4.5.4",
+    "copy-webpack-plugin": "^5.0.0",
     "css-loader": "^1.0.1",
     "curl-transaction-core": "^1.0.3",
     "curl-transaction-webgl2-impl": "^1.0.2",
