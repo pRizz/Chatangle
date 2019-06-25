@@ -42,7 +42,7 @@
     "curl-transaction-webgl2-impl": "^1.0.2",
     "curl.lib.js": "^1.0.22",
     "emoji-mart-vue": "^2.6.4",
-    "eslint": "^5.8.0",
+    "eslint": "^6.0.1",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.6",
     "eslint-plugin-import": "^2.14.0",
