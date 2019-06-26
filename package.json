@@ -44,7 +44,7 @@
     "emoji-mart-vue": "^2.6.4",
     "eslint": "^5.8.0",
     "eslint-config-standard": "^11.0.0",
-    "eslint-plugin-html": "^4.0.6",
+    "eslint-plugin-html": "^6.0.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-node": "^7.0.1",
     "eslint-plugin-promise": "^4.0.1",
